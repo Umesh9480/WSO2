@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CustomerDBEventEP" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CustomerDBEventEP.xml</file>
+    </artifact>
+    <artifact name="eventProcessFailSeq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/eventProcessFailSeq.xml</file>
+    </artifact>
+    <artifact name="DBEventProcessSeq" groupId="com.example.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/DBEventProcessSeq.xml</file>
+    </artifact>
+</artifacts>
