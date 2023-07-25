@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="ChooseFunction" xmlns="http://ws.apache.org/ns/synapse">
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:template match="/">
+            <Products>
+                <xsl:for-each select="products/product">
+                    <xsl:choose>
+                        <xsl:when test="price > 25000">
+                            <product>
+                                <name>
+                                    <xsl:value-of select="name"/>
+                                </name>
+                                <price>
+                                    <xsl:value-of select="price"/>
+                                </price>
+                                <status>It is more than 25000</status>
+                            </product>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <product>
+                                <name>
+                                    <xsl:value-of select="name"/>
+                                </name>
+                                <price>
+                                    <xsl:value-of select="price"/>
+                                </price>
+                                <status>It is less than 25000</status>
+                            </product>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:for-each>
+            </Products>
+        </xsl:template>
+    </xsl:stylesheet>
+</localEntry>

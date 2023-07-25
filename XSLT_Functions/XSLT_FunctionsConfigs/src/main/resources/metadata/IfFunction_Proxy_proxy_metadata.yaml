@@ -1,0 +1,10 @@
+---
+key: "IfFunction_Proxy_proxy-1.0.0"
+name : "IfFunction_Proxy"
+displayName : "IfFunction_Proxy"
+description: "Sample Proxy Service"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/services/IfFunction_Proxy"
+definitionType: "WSDL1"
+securityType: "BASIC"
+mutualSSLEnabled: false

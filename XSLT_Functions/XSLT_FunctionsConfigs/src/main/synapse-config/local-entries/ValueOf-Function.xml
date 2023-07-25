@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="ValueOf-Function" xmlns="http://ws.apache.org/ns/synapse">
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:template match="/">
+            <Employees>
+                <id>
+                    <xsl:value-of select="//id"/>
+                </id>
+                <name>
+                    <xsl:value-of select="//name"/>
+                </name>
+                <dept>
+                    <xsl:value-of select="//dept"/>
+                </dept>
+            </Employees>
+        </xsl:template>
+    </xsl:stylesheet>
+</localEntry>

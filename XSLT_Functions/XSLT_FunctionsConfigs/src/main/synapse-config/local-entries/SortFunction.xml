@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="SortFunction" xmlns="http://ws.apache.org/ns/synapse">
+    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:template match="/">
+            <Products>
+                <xsl:for-each select="products/product">
+                    <xsl:sort select="price"/>
+                    <product>
+                        <id>
+                            <xsl:value-of select="id"/>
+                        </id>
+                        <name>
+                            <xsl:value-of select="name"/>
+                        </name>
+                        <price>
+                            <xsl:value-of select="price"/>
+                        </price>
+                    </product>
+                </xsl:for-each>
+            </Products>
+        </xsl:template>
+    </xsl:stylesheet>
+</localEntry>

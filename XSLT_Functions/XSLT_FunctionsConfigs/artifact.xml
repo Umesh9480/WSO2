@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ValueOf-Function" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/ValueOf-Function.xml</file>
+    </artifact>
+    <artifact name="ValueOfFunctionProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/ValueOfFunctionProxy.xml</file>
+    </artifact>
+    <artifact name="ValueOfFunctionProxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ValueOfFunctionProxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="ForEachFunction" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/ForEachFunction.xml</file>
+    </artifact>
+    <artifact name="ForEachFunctionProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/ForEachFunctionProxy.xml</file>
+    </artifact>
+    <artifact name="ForEachFunctionProxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ForEachFunctionProxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="ChooseFunction" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/ChooseFunction.xml</file>
+    </artifact>
+    <artifact name="ChooseFunctionProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/ChooseFunctionProxy.xml</file>
+    </artifact>
+    <artifact name="ChooseFunctionProxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/ChooseFunctionProxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="IfFunction_Proxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/IfFunction_Proxy.xml</file>
+    </artifact>
+    <artifact name="IfFunction_Proxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/IfFunction_Proxy_proxy_metadata.yaml</file>
+    </artifact>
+    <artifact name="IfFunction" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/IfFunction.xml</file>
+    </artifact>
+    <artifact name="SortFunction" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/SortFunction.xml</file>
+    </artifact>
+    <artifact name="SortFunctionProxy" groupId="com.example.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SortFunctionProxy.xml</file>
+    </artifact>
+    <artifact name="SortFunctionProxy_proxy_metadata" groupId="com.example.proxy-service.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/SortFunctionProxy_proxy_metadata.yaml</file>
+    </artifact>
+</artifacts>
