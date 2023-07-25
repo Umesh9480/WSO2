@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: XML_To_JSON
+  description: API Definition of XML_To_JSON
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/transformation
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

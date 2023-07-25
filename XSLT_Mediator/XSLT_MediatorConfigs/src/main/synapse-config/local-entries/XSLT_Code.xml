@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="XSLT_Code" xmlns="http://ws.apache.org/ns/synapse">
+    <xsl:stylesheet version="1.0" xmlns:json="http://json.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <xsl:output encoding="UTF-8" indent="yes" method="text"/>
+        <xsl:strip-space elements="*"/>
+        <xsl:param name="skip-root" select="false()"/>
+        <xsl:template match="/">
+            <xsl:text>{</xsl:text>
+            <xsl:choose>
+                <xsl:when test="$skip-root = 'true'">
+                    <xsl:apply-templates select="child::node()/child::node()"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="child::node()"/>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>}</xsl:text>
+        </xsl:template>
+        <xsl:template match="@* | *">
+            <xsl:if test="preceding-sibling::*">
+                <xsl:text>,</xsl:text>
+            </xsl:if>
+            <xsl:choose>
+                <xsl:when test="parent::*/@json:type = 'array'"/>
+                <xsl:otherwise>
+                    <xsl:text>"</xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>"</xsl:text>
+                    <xsl:text>:</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:choose>
+                <xsl:when test="@json:type = 'array'">
+                    <xsl:text>[</xsl:text>
+                    <xsl:apply-templates select="child::*"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:when>
+                <xsl:when test="@json:type = 'object' or count(attribute::*[not(namespace-uri() = 'http://json.org') and not(namespace-uri() = 'http://www.w3.org/2001/XMLSchema-instance')] | child::*) > 0">
+                    <xsl:text>{</xsl:text>
+                    <xsl:for-each select="attribute::*[not(namespace-uri() = 'http://json.org') and not(namespace-uri() = 'http://www.w3.org/2001/XMLSchema-instance')] | child::*">
+                        <xsl:if test="not(preceding-sibling::*) and position() != 1">
+                            <xsl:text>,</xsl:text>
+                        </xsl:if>
+                        <xsl:apply-templates select="current()"/>
+                    </xsl:for-each>
+                    <xsl:text>}</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:call-template name="value"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:template>
+        <xsl:template name="value">
+            <xsl:param name="inputValue" select="."/>
+            <xsl:variable name="normalizedValue" select="normalize-space($inputValue)"/>
+            <xsl:choose>
+                <xsl:when test="not($normalizedValue)">
+                    <xsl:choose>
+                        <xsl:when test="@xsi:nil = 'true'">
+                            <xsl:text>null</xsl:text>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text>""</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:when test="@json:type = 'string'">
+                    <xsl:text>"</xsl:text>
+                    <xsl:value-of select="$normalizedValue"/>
+                    <xsl:text>"</xsl:text>
+                </xsl:when>
+                <xsl:when test="number($normalizedValue)">
+                    <xsl:value-of select="number($normalizedValue)"/>
+                </xsl:when>
+                <xsl:when test="translate($normalizedValue, 'TRUE', 'true') = 'true'">
+                    <xsl:text>true</xsl:text>
+                </xsl:when>
+                <xsl:when test="translate($normalizedValue, 'FALSE', 'false') = 'false'">
+                    <xsl:text>false</xsl:text>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:text>"</xsl:text>
+                    <xsl:value-of select="$normalizedValue"/>
+                    <xsl:text>"</xsl:text>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:template>
+    </xsl:stylesheet>
+</localEntry>

@@ -1,0 +1,11 @@
+---
+key: "XML_To_JSON-1.0.0"
+name : "XML_To_JSON"
+displayName : "XML_To_JSON"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/transformation"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"
