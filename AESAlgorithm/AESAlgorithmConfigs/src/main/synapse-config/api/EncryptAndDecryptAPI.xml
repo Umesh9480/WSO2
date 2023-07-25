@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/encrypt-decrypt-api" name="EncryptAndDecryptAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property expression="json-eval($)" name="input_Data" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="get-property('input_Data')" name="input"/>
+            </log>
+            <class name="com.eidiko.AESExample"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+    "input": $1,&#xd;
+    "encrypt": $2,&#xd;
+    "decrypt": $3&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('input_Data')"/>
+                    <arg evaluator="xml" expression="get-property('encrypt_data')"/>
+                    <arg evaluator="xml" expression="get-property('decrypt_data')"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
