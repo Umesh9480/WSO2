@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/file-connector" name="FileConnectorOperationAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/create-file">
+        <inSequence>
+            <file.write configKey="FILE_CONNECTION_1">
+                <filePath>{json-eval($.filePath)}</filePath>
+                <contentOrExpression>{json-eval($.content)}</contentOrExpression>
+                <mimeType>Automatic</mimeType>
+                <compress>false</compress>
+                <writeMode>Create New</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Body</includeResultTo>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/overrite">
+        <inSequence>
+            <file.write configKey="FILE_CONNECTION_1">
+                <filePath>{json-eval($.filePath)}</filePath>
+                <contentOrExpression>{json-eval($.content)}</contentOrExpression>
+                <mimeType>Automatic</mimeType>
+                <compress>false</compress>
+                <writeMode>Overwrite</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Body</includeResultTo>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/append">
+        <inSequence>
+            <file.write configKey="FILE_CONNECTION_1">
+                <filePath>{json-eval($.filePath)}</filePath>
+                <contentOrExpression>{json-eval($.content)}</contentOrExpression>
+                <mimeType>Automatic</mimeType>
+                <compress>false</compress>
+                <writeMode>Append</writeMode>
+                <enableStreaming>false</enableStreaming>
+                <appendNewLine>false</appendNewLine>
+                <enableLock>false</enableLock>
+                <includeResultTo>Message Body</includeResultTo>
+                <updateLastModified>true</updateLastModified>
+            </file.write>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/compress">
+        <inSequence>
+            <file.compress configKey="FILE_CONNECTION_1">
+                <sourceDirectoryPath>{json-eval($.sourcePath)}</sourceDirectoryPath>
+                <targetFilePath>{json-eval($.targetPath)}</targetFilePath>
+                <includeSubDirectories>true</includeSubDirectories>
+            </file.compress>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/unzip">
+        <inSequence>
+            <file.unzip configKey="FILE_CONNECTION_1">
+                <sourceFilePath>{json-eval($.sourcePath)}</sourceFilePath>
+                <targetDirectory>{json-eval($.targetPath)}</targetDirectory>
+            </file.unzip>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/copy">
+        <inSequence>
+            <file.copy configKey="FILE_CONNECTION_1">
+                <sourcePath>{json-eval($.sourcePath)}</sourcePath>
+                <targetPath>{json-eval($.targetPath)}</targetPath>
+                <sourceFilePattern>sample.json</sourceFilePattern>
+                <includeParent>false</includeParent>
+                <overwrite>false</overwrite>
+                <renameTo>sample.json</renameTo>
+            </file.copy>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/move">
+        <inSequence>
+            <file.move configKey="FILE_CONNECTION_1">
+                <sourcePath>{json-eval($.sourcePath)}</sourcePath>
+                <targetPath>{json-eval($.targetPath)}</targetPath>
+                <createParentDirectories>true</createParentDirectories>
+                <includeParent>false</includeParent>
+                <overwrite>true</overwrite>
+                <renameTo>sample.json</renameTo>
+                <filePattern>sample.json</filePattern>
+            </file.move>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/read">
+        <inSequence>
+            <file.read configKey="FILE_CONNECTION_1">
+                <path>{json-eval($.sourcePath)}</path>
+                <filePattern>sample.json</filePattern>
+                <readMode>Complete File</readMode>
+                <startLineNum>0</startLineNum>
+                <endLineNum>0</endLineNum>
+                <lineNum>0</lineNum>
+                <includeResultTo>Message Body</includeResultTo>
+                <enableStreaming>false</enableStreaming>
+                <enableLock>false</enableLock>
+            </file.read>
+            <log level="full"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/checkexist">
+        <inSequence>
+            <file.checkExist configKey="FILE_CONNECTION_1">
+                <path>{json-eval($.sourcePath)}</path>
+            </file.checkExist>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/delete">
+        <inSequence>
+            <file.delete configKey="FILE_CONNECTION_1">
+                <path>{json-eval($.sourcePath)}</path>
+            </file.delete>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/rename">
+        <inSequence>
+            <file.rename configKey="FILE_CONNECTION_1">
+                <path>{json-eval($.sourcePath)}</path>
+                <renameTo>{json-eval($.rename)}</renameTo>
+                <overwrite>false</overwrite>
+            </file.rename>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" url-mapping="/create-directory">
+        <inSequence>
+            <file.createDirectory configKey="FILE_CONNECTION_1">
+                <directoryPath>{json-eval($.sourcePath)}</directoryPath>
+            </file.createDirectory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

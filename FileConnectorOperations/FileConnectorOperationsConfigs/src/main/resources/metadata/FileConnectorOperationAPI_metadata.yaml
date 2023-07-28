@@ -1,0 +1,11 @@
+---
+key: "FileConnectorOperationAPI-1.0.0"
+name : "FileConnectorOperationAPI"
+displayName : "FileConnectorOperationAPI"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/file-connector"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

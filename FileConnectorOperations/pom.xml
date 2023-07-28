@@ -3,14 +3,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>XSLT_Mediator</artifactId>
+  <artifactId>FileConnectorOperations</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>XSLT_Mediator</name>
-  <description>XSLT_Mediator</description>
+  <name>FileConnectorOperations</name>
+  <description>FileConnectorOperations</description>
   <modules>
-    <module>../../../../../../Umesh/XSLT_Mediator/XSLT_MediatorConfigs</module>
-    <module>../../../../../../Umesh/XSLT_Mediator/XSLT_MediatorCompositeExporter</module>
+    <module>FileConnectorOperationsConnectorExporter</module>
+    <module>FileConnectorOperationsConfigs</module>
+    <module>FileConnectorOperationsCompositeExporter</module>
   </modules>
   <scm>
     <connection>scm:git:https://github.com/username/repository.git</connection>
