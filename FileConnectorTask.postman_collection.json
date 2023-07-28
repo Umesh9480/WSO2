@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "f961b44c-1052-44cc-9149-e7b2711d1527",
+		"name": "FileConnectorTask",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27495708"
+	},
+	"item": [
+		{
+			"name": "CreateFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filePath\": \"C:/Windows/FileConector/in/sample.json\",\r\n    \"content\": {\r\n        \"Employees\": {\r\n            \"Emp\": {\r\n                \"id\": 101,\r\n                \"name\": \"Tom\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/create-file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"create-file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Overwrite",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filePath\": \"C:/Windows/FileConector/in/sample.json\",\r\n    \"content\": {\r\n        \"Employees\": {\r\n            \"Emp\": {\r\n                \"id\": 101,\r\n                \"name\": \"Tom\",\r\n                \"dept\": \"WSO2\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/overrite",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"overrite"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Append",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"filePath\": \"C:/Windows/FileConector/in/sample.json\",\r\n    \"content\": {\r\n        \"Employees\": {\r\n            \"Emp\": {\r\n                \"id\": 101,\r\n                \"name\": \"Tom\",\r\n                \"dept\": \"WSO2\"\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/append",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"append"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompressFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/in\",\r\n    \"targetPath\": \"C:/Windows/FileConector/in.zip\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/compress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"compress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unzip",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/in.zip\",\r\n    \"targetPath\": \"C:/Windows/FileConector/unzip\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/unzip",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"unzip"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/in/sample.json\",\r\n    \"targetPath\": \"C:/Windows/FileConector/copy\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/copy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"copy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/in/sample.json\",\r\n    \"targetPath\": \"C:/Windows/FileConector\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/move",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/sample.json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/read",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckExist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/sample.json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/checkexist",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"checkexist"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rename",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/sample.json\",\r\n    \"rename\": \"result.json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/rename",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"rename"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/result.json\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_directory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sourcePath\": \"C:/Windows/FileConector/umesh\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8290/file-connector/create-directory",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8290",
+					"path": [
+						"file-connector",
+						"create-directory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
